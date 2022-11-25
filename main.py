@@ -10,4 +10,7 @@ def get_all_tokens(filename:str): #returns all tokens in a file as token from em
     return all_tokens
 
 all_tokens = get_all_tokens("tokens.txt")
-open("tokens.txt", "w").write("".join(all_tokens))
+open("tokens.txt" , "w").write("")
+for i in all_tokens:
+    file = open("tokens.txt", "a")
+    file.write(f"{i}\n")
