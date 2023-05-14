@@ -1,8 +1,4 @@
-token = open('tokens.txt', 'r').read().splitlines():
-with open('tokens.txt', 'w') as f:
-    for fulltoken in tokens:
-        if ":" in fulltoken:
-            token = fulltoken.split(':')[2]
-            f.write(token + '\n')
-        else:
-            f.write(fulltoken + '\n')
+tokens = open("tokens.txt", "r")
+format = open("reformatted.txt", "w")
+for line in tokens:
+    format.write(line.split(":")[-1])
