@@ -1,16 +1,8 @@
-def get_all_tokens(filename:str): #returns all tokens in a file as token from email:password:token
-    all_tokens = []
-    for j in open(filename, "r").read().splitlines():
-        if ":" in j:
-            j = j.split(":")[2]
-            all_tokens.append(j)
+token = open('tokens.txt', 'r').read().splitlines():
+with open('tokens.txt', 'w') as f:
+    for fulltoken in tokens:
+        if ":" in fulltoken:
+            token = fulltoken.split(':')[2]
+            f.write(token + '\n')
         else:
-            all_tokens.append(j)
- 
-    return all_tokens
-
-all_tokens = get_all_tokens("tokens.txt")
-open("tokens.txt" , "w").write("")
-for i in all_tokens:
-    file = open("tokens.txt", "a")
-    file.write(f"{i}\n")
+            f.write(fulltoken + '\n')
